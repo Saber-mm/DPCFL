@@ -61,3 +61,6 @@ We ran our experiments with the following packages:
   
   R-DPCFL (proposed) algorithm: ```python ./main/DPCFL.py --device=0 --dataset=CIFAR10 --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=R_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.001 --max_per_sample_grad_norm=5.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```    
 
+
+## comments:
+The algoruthm R-DPCFL operates on "M_projected_scaled" in line 442 of '''DPCFL.py'''. One could plot columns of this matrix (clients updates) after line 442 for better visualization of how effective the use of full batch size in the first round has been in reducing the noise level in the clients' model updates (similar to what we observed in Fig.5 in the paper). For example, when there are 21 clients, the first three belong to the first cluster, the next 6 belong to the second cluster, and so on (just like the Fig. 5).
