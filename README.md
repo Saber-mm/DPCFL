@@ -13,10 +13,10 @@ We ran our experiments with the following packages:
 * scikit-learn==1.6.1
 
 ## Data
-* The data will be automatically downloaded, when the file "algs/DPCFL.py" is run with its required arguments.
+* The data will be automatically downloaded, when the file "main/CDPFL.py" is run with its required arguments.
   
 ## Experiments
-* For codes and configurations regarding the experiments go to the "main/FPCFL.py" file. Most of the arguments have some default value as well as a short description. 
+* For codes and configurations regarding the experiments go to the "main/CDPFL.py" file. Most of the arguments have some default value as well as a short description. 
 
 ## Example prompts
 
