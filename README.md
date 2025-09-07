@@ -80,4 +80,4 @@ We ran our experiments with the following packages:
 
 
 ## comments:
-The algoruthm R-DPCFL operates on "M_projected_scaled" in line 442 of '''DPCFL.py'''. One could plot columns of this matrix (clients updates) after line 442 for better visualization of how effective the use of full batch size in the first round has been in reducing the noise level in the clients' model updates (similar to what we observed in Fig.5 in the paper). For example, when there are 21 clients, the first three belong to the first cluster, the next 6 belong to the second cluster, and so on (just like the Fig. 5).
+The algorithm R-DPCFL operates on "M_projected_scaled" (line 442 of DPCFL.py). One could plot columns of this matrix (clients' updates) after line 442 for a visualization of how effective the use of full batch size in the first round has been in reducing the noise level in the clients' model updates (similar to what we observed in Fig.5 in the paper). For example, when there are 21 clients, the first three belong to the first cluster, the next 6 belong to the second cluster, and so on (just like the Fig. 5).
