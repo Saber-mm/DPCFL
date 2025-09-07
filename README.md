@@ -20,7 +20,7 @@ We ran our experiments with the following packages:
 
 ## Example commands
 
-** MNIST with covariate shift:
+1) MNIST with covariate shift:
   
   global baseline: ```python ./main/DPCFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0```
   
@@ -34,7 +34,7 @@ We ran our experiments with the following packages:
 
 
 
-* FMNIST with covariate shift:
+2) FMNIST with covariate shift:
   
   global baseline: ```python CDPFL.py --device=0 --dataset=FMNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0```
   
@@ -52,7 +52,7 @@ We ran our experiments with the following packages:
 
 
 
-* CIFAR10 with concept shift:
+3) CIFAR10 with concept shift:
   
   global baseline: ```python ./main/DCPFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=64 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
   
@@ -66,7 +66,7 @@ We ran our experiments with the following packages:
 
 
 
-* CIFAR10 with covariate shift:
+4) CIFAR10 with covariate shift:
   
   global baseline: ```python ./main/DPCFL.py --device=0 --dataset=CIFAR10 --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=64 --learning_rate=0.0005 --max_per_sample_grad_norm=4.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
   
