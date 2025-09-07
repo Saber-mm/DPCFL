@@ -21,6 +21,7 @@ We ran our experiments with the following packages:
 ## Example prompts
 
 * MNIST with covariate shift:
+  
   global baseline: ```python CDPFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0```
   
   local baseline: ``` python CDPFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=local --num_rounds=200 --batch_size=32 --learning_rate=0.01 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0```
