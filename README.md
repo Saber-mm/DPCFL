@@ -16,7 +16,7 @@ We ran our experiments with the following packages:
 * The data will be automatically downloaded, when the file "./main/DPCFL.py" is run with its required arguments.
   
 ## Experiments
-* For codes and configurations regarding the experiments go to the "main/DPCFL.py" file. Most of the arguments have some default value as well as a short description. 
+* For codes and configurations regarding the experiments go to the "main/DPCFL.py" file. Most of the arguments have some default value as well as a short description. We have included the following example commands for an easier start.
 
 ## Example commands
 
