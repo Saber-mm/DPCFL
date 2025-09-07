@@ -121,7 +121,8 @@ if args.dataset in ['MNIST', 'FMNIST', 'CIFAR10', 'CIFAR100']:
                                                                             p_pure = args.p_pure, \
                                                                             seed = args.seed, \
                                                                             num_samples_per_client = \
-                                                                            int(1.25 * args.num_samples_per_client))
+                                                                            int(1.25 * args.num_samples_per_client)) # the "1.25" is because later, we split the train set with ratio 0.8 and 0.2. With the "1.25",
+                                                                                                                     # number of final train samples will be "num_samples_per_client".
     
     idxs_train = [list(user_groups[i])[:int(0.8*len(user_groups[i]))] for i in range(len(user_groups))]
     idxs_val = [list(user_groups[i])[int(0.8*len(user_groups[i])):] for i in range(len(user_groups))]
