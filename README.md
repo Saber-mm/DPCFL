@@ -18,7 +18,7 @@ We ran our experiments with the following packages:
 ## Experiments
 * For codes and configurations regarding the experiments go to the "main/DPCFL.py" file. Most of the arguments have some default value as well as a short description. 
 
-## Example prompts
+## Example commands
 
 * MNIST with covariate shift:
   
