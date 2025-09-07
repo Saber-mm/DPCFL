@@ -32,3 +32,18 @@ We ran our experiments with the following packages:
   
   R-DPCFL (proposed) algorithm: ```python ./main/DPCFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=R_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0 ```
 
+
+
+
+* CIFAR10 with conceptshift:
+  
+  global baseline: ```python ./main/DCPFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=global --num_rounds=200 --batch_size=64 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
+  
+  local baseline: ```python ./main/DCPFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=local --num_rounds=200 --batch_size=64 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
+  
+  MR-MTL baseline: ```python ./main/DPCFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=MR_MTL --num_rounds=200 --batch_size=64 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --lambda_MR_MTL=1.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
+  
+  IFCA baseline: ```python ./main/DPCFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=f_CDPFL --num_rounds=200 --batch_size=64 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```
+  
+  R-DPCFL (proposed) algorithm: ```python ./main/DPCFL.py --device=0 --dataset=CIFAR10 --shift=labelflip --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=R_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.001 --max_per_sample_grad_norm=3.0 --privacy_dist=Dist1 --delta=0.0001 --num_samples_per_client=10000 --seed=0```  
+
