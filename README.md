@@ -30,5 +30,5 @@ We ran our experiments with the following packages:
   
   IFCA baseline: ```python ./main/DPCFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=f_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0```
   
-  R-DPCFL (proposed) algorithm: ```python DPCFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=R_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0 ```
+  R-DPCFL (proposed) algorithm: ```python ./main/DPCFL.py --device=0 --dataset=MNIST --shift=covariateshift --true_num_clusters=4 --num_clients=21 --ratio_minority=0.15 --method=R_CDPFL --num_rounds=200 --batch_size=32 --learning_rate=0.005 --max_per_sample_grad_norm=1.0 --privacy_dist=Dist1 --delta=0.0001 --seed=0 ```
 
