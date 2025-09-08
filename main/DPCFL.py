@@ -49,7 +49,7 @@ parser = argparse.ArgumentParser(description='training')
 parser.add_argument('--device', type=str, default='0')
 parser.add_argument('--method', type=str, default='R_CDPFL', help="used method: 'FedAvg'/'global'/'local'/'MR_MTL'/'f_CDPFL'/'R_CDPFL'/'O_CDPFL'")
 parser.add_argument('--privacy_dist', type=str, default='Dist1', help="privacy preference sampling distribution: 'Dist1'/'Dist2'/'Dist3'/'Dist4'/'Dist5' ")
-parser.add_argument('--dataset', type=str, default='MNIST', help="'MNIST'/'FMNIST'/'CIFAR10'/'CIFAR100'")
+parser.add_argument('--dataset', type=str, default='MNIST', help="'MNIST'/'FMNIST'/'CIFAR10'")
 parser.add_argument('--shift', type=str, default='covariateshift', help="'covariateshift'/'labelshift'/'labelflip'")
 parser.add_argument('--num_clients', type=int, default=20)
 parser.add_argument('--batch_size', type=int, default=32)
@@ -111,7 +111,7 @@ torch.cuda.manual_seed(args.seed)
 num_minority_clients = int(np.floor(args.ratio_minority * args.num_clients))
 print('There will be {} minority clients'.format(num_minority_clients))
 num_majority_clients = (args.num_clients - num_minority_clients)/(args.true_num_clusters - 1)
-if args.dataset in ['MNIST', 'FMNIST', 'CIFAR10', 'CIFAR100']:
+if args.dataset in ['MNIST', 'FMNIST', 'CIFAR10']:
     train_dataset, test_dataset, user_groups, user_groups_test, true_clusters, clusters_idx = get_dataset_cluster_split( \
                                                                             dataset=args.dataset, \
                                                                             num_users=args.num_clients, \
@@ -245,15 +245,7 @@ elif args.dataset == 'CIFAR10':
     print('total number of parameters:{}'.format(p))
     model_trial = copy.deepcopy(models[0])
     model_trial.cuda()
-    summary(model_trial, (3,32,32))
-elif args.dataset == 'CIFAR100':
-    model_0 = resnet18(num_classes = 100)
-    models = [copy.deepcopy(model_0) for _ in range(0, args.num_clients)]
-    p = sum(p.numel() for p in models[0].parameters() if p.requires_grad)
-    print('total number of parameters:{}'.format(p))
-    model_trial = copy.deepcopy(models[0])
-    model_trial.cuda()
-    summary(model_trial, (3,32,32))    
+    summary(model_trial, (3,32,32))   
 ###########################################
         
 # loss functions, optimizer:
